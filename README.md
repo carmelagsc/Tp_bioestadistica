@@ -1,4 +1,9 @@
-# Tp_bioestadistica
+# Tp bioestadistica
+## Alumnos
+* Lucas Franzi - 
+
+* Carmela García Silva Caputo - 62124
+
 
 ## Diccionario de Variables – Dataset
 
