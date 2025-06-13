@@ -11,8 +11,6 @@ sum(is.na(datos))
 colSums(is.na(datos))
 summary(datos)
 
-
-
 #Estoy viendo las variables en cada columna cualitativa
 unique(datos$rbc)
 unique(datos$pc)
@@ -54,6 +52,8 @@ na_not <- rowSums(is.na(notckd))
 na_not[na_not != 0]
 summary(notckd)
 #Hay que ver que hacer con los NA, podemos ver de poner un numero representativo o dejarlo asi. Si un mismo paciente tiene muchos NA yo lo sacaría.
+
+write.csv(datos, file="C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica/kidney_disease_EDA.csv")
 
 #histograma de edades
 library(ggplot2)
