@@ -13,7 +13,7 @@
 | `bp`        | Presión arterial (Blood Pressure) | Numérica | Presión arterial en mmHg |
 | `sg`        | Gravedad específica de la orina (Specific Gravity) | Numérica/Categórica | Indica la concentración de solutos en la orina |
 | `al`        | Albúmina en orina (Albumin) | Ordinal (0–5) | Valores más altos indican daño renal |
-| `su`        | Azúcar en orina (Sugar) | Ordinal (0–5) | Puede indicar diabetes u otros problemas |
+| `su`        | Glucosa en orina (Sugar) | Ordinal (0–5) | Puede indicar diabetes u otros problemas |
 | `rbc`       | Glóbulos rojos en orina (Red Blood Cells) | Categórica | `normal` o `abnormal` |
 | `pc`        | Células de pus (Pus Cell) | Categórica | `normal` o `abnormal` |
 | `pcc`       | Agrupamientos de células de pus (Pus Cell Clumps) | Categórica | `present` o `notpresent` |
