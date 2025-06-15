@@ -1,7 +1,8 @@
+rm(list=ls())
 path="C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica"
 setwd(setwd(path))
 
-datos <- read.csv("C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica/kidney_disease.csv", sep=",",header= TRUE)
+datos <- read.csv("C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica/avances/kidney_disease_EDA.csv", sep=",",header= TRUE)
 print(head(datos))
 
 #Análisis exloratorio de datos
@@ -53,7 +54,7 @@ na_not[na_not != 0]
 summary(notckd)
 #Hay que ver que hacer con los NA, podemos ver de poner un numero representativo o dejarlo asi. Si un mismo paciente tiene muchos NA yo lo sacaría.
 
-write.csv(datos, file="C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica/kidney_disease_EDA.csv")
+#write.csv(datos, file="C:/Users/Equipo/Documents/Bioestadistica/TP_bioestadistica/kidney_disease_EDA.csv")
 
 #histograma de edades
 library(ggplot2)
@@ -89,5 +90,19 @@ ggplot(datos, aes(x = bp, fill = classification)) +
        fill = "Clasificación") +
   theme_minimal()
 
+# Calcular proporciones de NA para cada grupo
+na_prop_ckd <- colSums(is.na(ckd)
+na_prop_notckd <- colSums(is.na(notckd) 
+
+# Combinar en un data frame
+tabla_na <- data.frame(
+  
+  Variable = names(na_prop_ckd),
+  Proporcion_NA_CKD = round(na_prop_ckd, 3),
+  Proporcion_NA_NotCKD = round(na_prop_notckd, 3))
+
+# Mostrar la tabla
+
+print(tabla_na)
 
 

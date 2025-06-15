@@ -27,9 +27,36 @@ for (var in vars) {
   
   print(
     ggplot(data.frame(x), aes(x = x)) +
-      geom_histogram(binwidth = binwidth, fill = "darkorange", color = "white") +
+      geom_histogram(binwidth = binwidth, fill = "orange", color = "white") +
       labs(title = paste("Histograma de", log_var),
            x = log_var, y = "Frecuencia") +
       theme_minimal()
   )
 }
+
+resultados_shapiro <- lapply(vars, function(var) {
+  x <- datos[[log_var]]
+  x <- x[!is.na(x)]  # eliminar NAs
+  if (length(x) >= 3 && length(x) <= 5000) {
+    test <- shapiro.test(x)
+    return(data.frame(
+      Variable = var,
+      W = round(test$statistic, 4),
+      p_value = round(test$p.value, 4),
+      Normal = ifelse(test$p.value > 0.05, "Sí", "No")
+    ))
+  } else {
+    return(data.frame(
+      Variable = var,
+      W = NA,
+      p_value = NA,
+      Normal = "Insuficiente datos"
+    ))
+  }
+})
+
+# Combinar resultados en un solo data frame
+tabla_shapiro <- do.call(rbind, resultados_shapiro)
+
+# Mostrar la tabla
+print(tabla_shapiro)
