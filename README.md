@@ -1,6 +1,6 @@
 # Tp bioestadistica
 ## Alumnos
-* Lucas Franzi - 
+* Lucas Franzi - 60605
 
 * Carmela García Silva Caputo - 62124
 
